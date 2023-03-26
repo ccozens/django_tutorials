@@ -1,0 +1,21 @@
+.sidebar-nav {
+	margin-top: 20px;
+	padding: 0;
+	list-style: none;
+	font-size: 1.2em;
+}
+
+.sidebar-nav a {
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+}
+
+body {
+	background: linear-gradient(
+		90deg,
+		rgba(227, 198, 246, 1) 0%,
+		rgba(255, 135, 135, 1) 50%,
+		rgba(252, 176, 69, 1) 100%
+	);
+}
