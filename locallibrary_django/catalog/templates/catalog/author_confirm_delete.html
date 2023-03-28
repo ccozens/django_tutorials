@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Delete Author</h1>
+{% if not user.is_authenticated %}
+<p>You must be logged in as admin to delete an author.</p>
+{% endif %}
+{% if not perms.catalog.author_delete %}
+<p>You do not have permission to delete authors.</p>
+{% else %}
+<p>Are you sure you want to delete the author: {{ author }}? </p>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete." />
+</form>
+{% endif %}
+{% endblock %}

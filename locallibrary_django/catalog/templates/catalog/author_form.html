@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Create Author</h1>
+<!-- if not logged in -->
+{% if not user.is_authenticated %}
+<p>You must be logged as admin in to create or edit an author.</p>
+{% endif %}
+{% if not perms.catalog.author_create or not perms.catalog.author_update%}
+<p>You do not have permission to create or update authors.</p>
+
+{% else %}
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" />
+</form>
+{% endif %}
+{% endblock %}
